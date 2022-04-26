@@ -1,6 +1,6 @@
 {
-  "name": "proyecto-react-de-cero",
   "homepage": "./",
+  "name": "proyecto-react-de-cero",  
   "version": "0.1.0",
   "private": true,
   "dependencies": {
