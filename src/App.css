@@ -1,0 +1,13 @@
+.containerFilters{
+    display: flex;
+    flex-direction: row;
+}
+.inputfilterName{
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+.selectFilterCharacter{
+    display: flex;
+    flex-direction: column;
+}
