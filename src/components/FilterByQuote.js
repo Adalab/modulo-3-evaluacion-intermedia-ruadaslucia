@@ -1,6 +1,6 @@
 function FilterByQuote(props) {
   function handleQuoteFilter(event) {
-    props.manolito(event);
+    props.setQuoteTerm(event);
   }
   return (
     <div className="inputfilterName">

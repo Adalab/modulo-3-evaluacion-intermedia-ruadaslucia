@@ -1,9 +1,6 @@
-import Filter from './Filter';
-
-function table(props) {
+function Table(props) {
   return (
     <>
-      <Filter />
       <div>
         <table>
           <thead>
@@ -18,4 +15,4 @@ function table(props) {
     </>
   );
 }
-export default table;
+export default Table;

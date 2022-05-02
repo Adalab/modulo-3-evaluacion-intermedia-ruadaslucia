@@ -1,6 +1,6 @@
 function FilterByCharacter(props) {
   function handleCharacterFilter(event) {
-    props.pepito(event);
+    props.handleCharFilter(event);
   }
 
   return (

@@ -11,7 +11,7 @@ import getApiFetch from './services/FetchService/ApiFetch';
 function App() {
   const [allCharacters, setAllCharacters] = useState([]);
   const [trCharacters, setTrCharacters] = useState([]);
-  const [inputQuote, setInputQuote] = useState('');
+  const [filterQuote, setFilterQuote] = useState('');
   const [filterCharacter, setFilterCharacter] = useState('all');
 
   //al cargarse la pagina devolvemos la promesa del fetch y la seteamos
@@ -20,13 +20,12 @@ function App() {
       setAllCharacters(allCharacters);
     });
   }, []);
-
-  //al cargarse la pagina ejecutamos la func. q crea la tabla que contiene todas las frases y sus personajes y se ejecuta siempre que cambia el estado allCharacters.
+  //creat tabla personajes
   useEffect(() => {
     createTrCharacters([...allCharacters]);
   }, [allCharacters]);
 
-  //creamos la tabla con sus cabeceras
+  //creamos la tabla con sus cabeceras y que se pinten en fila frase y personaje
   const createTrCharacters = (characters) => {
     const rowCharacters = characters.map((character) => {
       const rowCharacter = (
@@ -44,9 +43,9 @@ function App() {
     setAllCharacters([...characters]);
   };
 
-  const filterCharacters = () => {
+  const filterCharacters = (allCharacters, filterQuote) => {
     let filteredCharacters = allCharacters.filter((character) =>
-      character.quote.toLowerCase().includes(inputQuote.toLowerCase())
+      character.quote.toLowerCase().includes(filterQuote.toLowerCase())
     );
     if (filterCharacter !== 'all') {
       filteredCharacters = filteredCharacters.filter(
@@ -62,15 +61,22 @@ function App() {
   };*/
 
   function addCharacter() {}
-  function setCharcterFilterTerm(characterFilterTerm) {
+
+  function setCharacterFilterTerm(characterFilterTerm) {
     setFilterCharacter(characterFilterTerm);
+  }
+  function setQuoteFilterTerm(quoteFilterTerm) {
+    setFilterQuote(quoteFilterTerm);
   }
 
   return (
     <div className="App">
       <Header />
       <main>
-        <Filter manolito={setCharcterFilterTerm} />
+        <Filter
+          setChar={setCharacterFilterTerm}
+          setQuote={setQuoteFilterTerm}
+        />
         <TableOfContent trCharacters={trCharacters} />
         <AddNewForm addCharacter={addCharacter} />
       </main>
