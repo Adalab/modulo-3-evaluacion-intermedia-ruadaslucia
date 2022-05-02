@@ -1,8 +1,7 @@
 import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import FilterByQuote from './components/FilterByQuote';
-import FilterByCharacter from './components/FilterByCharacter';
+import Filter from './components/Filter';
 import TableOfContent from './components/TableOfContent';
 import AddNewForm from './components/AddNewForm';
 import { useEffect } from 'react';
@@ -13,7 +12,7 @@ function App() {
   const [allCharacters, setAllCharacters] = useState([]);
   const [trCharacters, setTrCharacters] = useState([]);
   const [inputQuote, setInputQuote] = useState('');
-  const [inputCharacter, setInputCharacter] = useState('all');
+  const [filterCharacter, setFilterCharacter] = useState('all');
 
   //al cargarse la pagina devolvemos la promesa del fetch y la seteamos
   useEffect(() => {
@@ -26,6 +25,7 @@ function App() {
   useEffect(() => {
     createTrCharacters([...allCharacters]);
   }, [allCharacters]);
+
   //creamos la tabla con sus cabeceras
   const createTrCharacters = (characters) => {
     const rowCharacters = characters.map((character) => {
@@ -44,46 +44,36 @@ function App() {
     setAllCharacters([...characters]);
   };
 
-  const handleQuoteFilter = (event) => {
-    let filterTerm = event.target.value;
-    setInputQuote(filterTerm);
-  };
-
-  const handleCharacterFilter = (event) => {
-    let filterTerm = event.target.value;
-    setInputCharacter(filterTerm);
-  };
-
   const filterCharacters = () => {
     let filteredCharacters = allCharacters.filter((character) =>
       character.quote.toLowerCase().includes(inputQuote.toLowerCase())
     );
-    if (inputCharacter !== 'all') {
+    if (filterCharacter !== 'all') {
       filteredCharacters = filteredCharacters.filter(
-        (character) => character.character === inputCharacter
+        (character) => character.character === filterCharacter
       );
     }
     createTrCharacters([...filteredCharacters]);
   };
 
-  const addCharacter = (event) => {
-    event.preventDefault();
-    const character = {
-      //objeto con informacion que quieres que lleve cada uno
-      quote: event.target.form.elements.quote.value,
-      character: event.target.form.elements.character.value,
-    };
-    saveAllCharacters([...allCharacters, character]);
+  /*saveAllCharacters([...allCharacters, character])
     event.target.form.elements.quote.value = '';
     event.target.form.elements.character.value = '';
-  };
+  };*/
+
+  function addCharacter() {}
+  function setCharcterFilterTerm(characterFilterTerm) {
+    setFilterCharacter(characterFilterTerm);
+  }
+
   return (
     <div className="App">
       <Header />
-      <FilterByQuote />
-      <FilterByCharacter />
-      <TableOfContent trCharacters />
-      <AddNewForm {...addCharacter} />
+      <main>
+        <Filter manolito={setCharcterFilterTerm} />
+        <TableOfContent trCharacters={trCharacters} />
+        <AddNewForm addCharacter={addCharacter} />
+      </main>
       <Footer />
     </div>
   );

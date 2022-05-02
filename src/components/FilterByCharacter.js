@@ -1,10 +1,13 @@
-import '../styles/filterForm.scss';
 function FilterByCharacter(props) {
+  function handleCharacterFilter(event) {
+    props.pepito(event);
+  }
+
   return (
     <div className="containerFilters">
       <div className="selectFilterCharacter">
         <p>Filter by character: </p>
-        <select name="select" onChange={props.handleCharacterFilter}>
+        <select name="select" onChange={handleCharacterFilter}>
           <option value="all">All characters</option>
           <option value="Rachel">Rachel</option>
           <option value="Phoebe">Phoebe</option>
@@ -17,4 +20,4 @@ function FilterByCharacter(props) {
     </div>
   );
 }
-export default FilterForm;
+export default FilterByCharacter;
