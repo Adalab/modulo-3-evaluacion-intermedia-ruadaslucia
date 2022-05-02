@@ -1,4 +1,4 @@
-import '../styles/addNewForm.scss';
+import '../../styles/addNewForm.scss';
 function addNew() {
   return (
     <div className="newCharacter">

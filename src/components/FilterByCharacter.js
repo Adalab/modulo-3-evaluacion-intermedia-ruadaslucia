@@ -1,11 +1,7 @@
 import '../styles/filterForm.scss';
-function FilterForm(props) {
+function FilterByCharacter(props) {
   return (
     <div className="containerFilters">
-      <div className="inputfilterName">
-        <p>Filter by quote: </p>
-        <input type="text" onChange={props.handleQuoteFilter} />
-      </div>
       <div className="selectFilterCharacter">
         <p>Filter by character: </p>
         <select name="select" onChange={props.handleCharacterFilter}>

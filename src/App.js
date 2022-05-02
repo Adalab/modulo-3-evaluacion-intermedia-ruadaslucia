@@ -1,11 +1,13 @@
 import './App.css';
 import Header from './components/Header';
-import FilterForm from './components/FilterForm';
+import Footer from './components/Footer';
+import FilterByQuote from './components/FilterByQuote';
+import FilterByCharacter from './components/FilterByCharacter';
 import TableOfContent from './components/TableOfContent';
 import AddNewForm from './components/AddNewForm';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import getApiFetch from './services/ApiFetch';
+import getApiFetch from './services/FetchService/ApiFetch';
 
 function App() {
   const [allCharacters, setAllCharacters] = useState([]);
@@ -78,9 +80,11 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <FilterForm />
+      <FilterByQuote />
+      <FilterByCharacter />
       <TableOfContent trCharacters />
-      <AddNewForm {addCharacter} />
+      <AddNewForm {...addCharacter} />
+      <Footer />
     </div>
   );
 }

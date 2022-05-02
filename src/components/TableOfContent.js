@@ -1,6 +1,8 @@
 import '../styles/tableOfContent.scss';
+import FilterByQuote from './FilterByQuote';
 function table(props) {
   return (
+    <FilterByForm handleQuoteFilter/>
     <div>
       <table>
         <thead>
