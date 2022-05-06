@@ -14,18 +14,19 @@ function App() {
   const [filterQuote, setFilterQuote] = useState('');
   const [filterCharacter, setFilterCharacter] = useState('all');
 
-  //al cargarse la pagina devolvemos la promesa del fetch y la seteamos
   useEffect(() => {
     getApiFetch().then((allCharacters) => {
       setAllCharacters(allCharacters);
     });
   }, []);
-  //creat tabla personajes
   useEffect(() => {
     createTrCharacters([...allCharacters]);
   }, [allCharacters]);
 
-  //creamos la tabla con sus cabeceras y que se pinten en fila frase y personaje
+  useEffect(() => {
+    filterCombined();
+  }, [filterQuote, filterCharacter]);
+
   const createTrCharacters = (characters) => {
     const rowCharacters = characters.map((character) => {
       const rowCharacter = (
@@ -43,29 +44,36 @@ function App() {
     setAllCharacters([...characters]);
   };
 
-  const filterCharacters = (allCharacters, filterQuote) => {
-    let filteredCharacters = allCharacters.filter((character) =>
+  const filterCombined = () => {
+    let filteredRows = allCharacters.filter((character) =>
       character.quote.toLowerCase().includes(filterQuote.toLowerCase())
     );
+
     if (filterCharacter !== 'all') {
-      filteredCharacters = filteredCharacters.filter(
+      filteredRows = filteredRows.filter(
         (character) => character.character === filterCharacter
       );
     }
-    createTrCharacters([...filteredCharacters]);
+
+    createTrCharacters([...filteredRows]);
   };
 
-  /*saveAllCharacters([...allCharacters, character])
+  function addCharacter(event) {
+    console.log(event);
+    const character = {
+      quote: event.target.form.elements.quote.value,
+      character: event.target.form.elements.character.value,
+    };
+    saveAllCharacters([...allCharacters, character]);
     event.target.form.elements.quote.value = '';
     event.target.form.elements.character.value = '';
-  };*/
-
-  function addCharacter() {}
+  }
 
   function setCharacterFilterTerm(characterFilterTerm) {
     setFilterCharacter(characterFilterTerm);
   }
   function setQuoteFilterTerm(quoteFilterTerm) {
+    console.log(quoteFilterTerm);
     setFilterQuote(quoteFilterTerm);
   }
 

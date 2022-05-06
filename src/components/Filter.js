@@ -14,7 +14,7 @@ function Filter(props) {
   return (
     <section>
       <FilterByQuote setQuoteTerm={handleQuoteFilter} />
-      <FilterByCharacter handleCharFilter={handleCharacterFilter} />
+      <FilterByCharacter characterFilter={handleCharacterFilter} />
     </section>
   );
 }

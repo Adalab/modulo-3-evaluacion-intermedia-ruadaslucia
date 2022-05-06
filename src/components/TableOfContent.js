@@ -5,8 +5,8 @@ function Table(props) {
         <table>
           <thead>
             <tr>
-              <th>Character</th>
               <th>Quote</th>
+              <th>Character</th>
             </tr>
           </thead>
           <tbody>{props.trCharacters}</tbody>

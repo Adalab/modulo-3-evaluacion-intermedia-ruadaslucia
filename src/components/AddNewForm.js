@@ -1,13 +1,9 @@
 import AddNewFormCharacter from './AddNewFormCharacter';
 import AddNewFormQuote from './AddNewFormQuote';
-function addNew() {
+function addNew(props) {
   const addCharacter = (event) => {
     event.preventDefault();
-    const character = {
-      //objeto con informacion que quieres que lleve cada uno
-      quote: event.target.form.elements.quote.value,
-      character: event.target.form.elements.character.value,
-    };
+    props.addCharacter(event);
   };
 
   return (
