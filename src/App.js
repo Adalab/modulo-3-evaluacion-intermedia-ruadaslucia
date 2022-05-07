@@ -1,11 +1,11 @@
 import './App.css';
+import { useEffect, useState } from 'react';
+import getApiFetch from './services/FetchService/ApiFetch';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Filter from './components/Filter';
 import TableOfContent from './components/TableOfContent';
 import AddNewForm from './components/AddNewForm';
-import { useEffect, useState } from 'react';
-import getApiFetch from './services/FetchService/ApiFetch';
 
 function App() {
   const [allCharacters, setAllCharacters] = useState([]);
@@ -26,19 +26,6 @@ function App() {
     filterCombined();
   }, [filterQuote, filterCharacter]);
 
-  const createTrCharacters = (characters) => {
-    const rowCharacters = characters.map((character) => {
-      const rowCharacter = (
-        <tr>
-          <td>{character.quote}</td>
-          <td>{character.character}</td>
-        </tr>
-      );
-      return rowCharacter;
-    });
-    setTrCharacters([...rowCharacters]);
-  };
-
   const saveAllCharacters = (characters) => {
     setAllCharacters([...characters]);
   };
@@ -56,9 +43,19 @@ function App() {
 
     createTrCharacters([...filteredRows]);
   };
-
+  const createTrCharacters = (characters) => {
+    const rowCharacters = characters.map((character) => {
+      const rowCharacter = (
+        <tr>
+          <td>{character.quote}</td>
+          <td>{character.character}</td>
+        </tr>
+      );
+      return rowCharacter;
+    });
+    setTrCharacters([...rowCharacters]);
+  };
   function addCharacter(event) {
-    console.log(event);
     const character = {
       quote: event.target.form.elements.quote.value,
       character: event.target.form.elements.character.value,
@@ -72,7 +69,6 @@ function App() {
     setFilterCharacter(characterFilterTerm);
   }
   function setQuoteFilterTerm(quoteFilterTerm) {
-    console.log(quoteFilterTerm);
     setFilterQuote(quoteFilterTerm);
   }
 

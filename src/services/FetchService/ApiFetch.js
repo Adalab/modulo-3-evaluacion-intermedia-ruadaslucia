@@ -4,12 +4,7 @@ function getApiFetch() {
   )
     .then((response) => response.json())
     .then((allCharacters) => {
-      return allCharacters.map((character) => ({
-        quote: character.quote,
-        character: character.character,
-      }));
+      return allCharacters;
     });
 }
 export default getApiFetch;
-
-//este servicio solo tiene que devolver los datos de la api
