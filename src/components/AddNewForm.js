@@ -1,5 +1,6 @@
 import AddNewFormCharacter from './AddNewFormCharacter';
 import AddNewFormQuote from './AddNewFormQuote';
+import '../styles/addNewForm.scss';
 function addNew(props) {
   const addCharacter = (event) => {
     event.preventDefault();
@@ -7,13 +8,13 @@ function addNew(props) {
   };
 
   return (
-    <div className="newCharacter">
+    <div className="formNewLine">
       <h3>Add a new quote</h3>
-      <form>
+      <div className="newCharacter">
         <AddNewFormQuote />
         <AddNewFormCharacter />
         <button onClick={addCharacter}>Add character and quote</button>
-      </form>
+      </div>
     </div>
   );
 }

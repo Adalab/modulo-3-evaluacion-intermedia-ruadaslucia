@@ -4,8 +4,7 @@ import Footer from './components/Footer';
 import Filter from './components/Filter';
 import TableOfContent from './components/TableOfContent';
 import AddNewForm from './components/AddNewForm';
-import { useEffect } from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import getApiFetch from './services/FetchService/ApiFetch';
 
 function App() {

@@ -1,0 +1,18 @@
+.tableContainer {
+  display: flex;
+  justify-content: center;
+}
+.tableContent {
+  background-color: #f5811456;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: bold;
+}
+.titleRow {
+  background-color: #f58114c5;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+.tableQuote {
+  text-align: start;
+}

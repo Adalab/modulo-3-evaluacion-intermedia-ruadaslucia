@@ -1,15 +1,16 @@
+import '../styles/tableOfContent.scss';
 function Table(props) {
   return (
     <>
-      <div>
+      <div className="tableContainer">
         <table>
           <thead>
-            <tr>
-              <th>Quote</th>
+            <tr className="titleRow">
+              <th className="tableQuote">Quote</th>
               <th>Character</th>
             </tr>
           </thead>
-          <tbody>{props.trCharacters}</tbody>
+          <tbody className="tableContent">{props.trCharacters}</tbody>
         </table>
       </div>
     </>

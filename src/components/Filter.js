@@ -1,3 +1,4 @@
+import '../styles/filters.scss';
 import FilterByQuote from './FilterByQuote';
 import FilterByCharacter from './FilterByCharacter';
 
@@ -12,7 +13,7 @@ function Filter(props) {
     props.setChar(filterTerm);
   };
   return (
-    <section>
+    <section className="twoFilters">
       <FilterByQuote setQuoteTerm={handleQuoteFilter} />
       <FilterByCharacter characterFilter={handleCharacterFilter} />
     </section>

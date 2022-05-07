@@ -1,12 +1,19 @@
+import '../styles/filterQuote.scss';
 function FilterByQuote(props) {
   function handleQuoteFilter(event) {
     props.setQuoteTerm(event);
   }
   return (
-    <div className="inputfilterName">
-      <p>Filter by quote: </p>
-      <input type="text" onChange={handleQuoteFilter} />
-    </div>
+    <form className="inputfilterName">
+      <label className="textQuote" htmlFor="">
+        Filter by quote:
+      </label>
+      <input
+        className="rectangleQuote"
+        type="text"
+        onChange={handleQuoteFilter}
+      />
+    </form>
   );
 }
 export default FilterByQuote;

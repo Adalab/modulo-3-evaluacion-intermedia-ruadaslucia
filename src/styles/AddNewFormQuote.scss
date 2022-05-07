@@ -1,0 +1,16 @@
+.newQuoteForm {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.textNewQuote {
+  margin-right: 5px;
+  font-weight: bold;
+}
+.newQuote {
+  width: 300px;
+  height: 40px;
+  background-color: #f5811456;
+  border: none;
+  border-radius: 10px;
+}

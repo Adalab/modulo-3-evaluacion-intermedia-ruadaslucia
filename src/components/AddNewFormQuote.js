@@ -1,9 +1,10 @@
+import '../styles/AddNewFormQuote.scss';
 function AddNewFormQuote() {
   return (
-    <div>
-      <p>quote</p>
-      <input type="text" name="quote" />
-    </div>
+    <form className="newQuoteForm">
+      <p className="textNewQuote">Quote</p>
+      <input className="newQuote" type="text" name="quote" />
+    </form>
   );
 }
 export default AddNewFormQuote;

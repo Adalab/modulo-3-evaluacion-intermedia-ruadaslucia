@@ -1,0 +1,29 @@
+.formNewLine {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.titleNewLine {
+  font-size: 25px;
+}
+.newCharacter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.addButton {
+  height: 80px;
+  width: 150px;
+  background-color: #f58114;
+  color: white;
+  font-weight: bold;
+  margin-left: 25px;
+  border: none;
+  border-radius: 10px;
+}

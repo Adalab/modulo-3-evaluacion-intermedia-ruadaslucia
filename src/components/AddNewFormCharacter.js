@@ -1,9 +1,10 @@
+import '../styles/AddNewFormCharacter.scss';
 function AddNewFormCharacter() {
   return (
-    <div>
-      <p>character</p>
-      <input type="text" name="character" />
-    </div>
+    <form className="newCharacterForm">
+      <p className="textNewCharacter">Character</p>
+      <input className="newCharacterInput" type="text" name="character" />
+    </form>
   );
 }
 export default AddNewFormCharacter;
