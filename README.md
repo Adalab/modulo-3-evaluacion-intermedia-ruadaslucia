@@ -16,3 +16,33 @@ Una vez que clicas, se despejan los otros campos para que pueda seguir añadiend
 
 #### `Capturas de la aplicación`
 ![image](https://user-images.githubusercontent.com/94449849/167292887-e5d76af7-7a72-4f5d-bdf2-8ae430fe592b.png)
+#### Instrucciones de despliegue
+
+###### Al agregar el archivo del repositorio a Visual Studio Code:
+
+- Abrir terminal y ejecutar `npm install` para generar la carpeta node_modules.
+- `npm start` para desplegar la aplicación por primera vez y abrir en navegador.
+
+#### ¿Qué he utilizado?
+
+- VSC
+- GitHub / Github Pages
+- Chrome
+- GitBook, materiales de estudio
+- Visitas a paginas web para resolucion de dudas (StackOverflow, MDN)
+- Videos de Zoom clases Adalab
+
+#### Utilización de
+
+- HTML 5
+- CSS 3 / SASS
+- JS / JSX
+- REACT
+
+#### Autores
+
+- Lucía Acuña Ruadas
+
+#### Menciones y agradecimientos
+
+- Woww...Agradecida siempre a Adalab por las clases grabadas y las sesiones de resolución de dudas los días anteriores.
